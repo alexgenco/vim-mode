@@ -1,4 +1,4 @@
-{WorkspaceView} = require "atom"
+{$, WorkspaceView} = require "atom"
 {VimState} = require "../lib/vim-state"
 
 describe "VimMode", ->
@@ -15,6 +15,12 @@ describe "VimMode", ->
 
   it "defaults to normal-mode", ->
     expect(editorView).toHaveClass("normal-mode")
+
+  it "intercepts text input sent to the editor view", ->
+    spyOn(vimState, "handleInput")
+    typingEvent = $.Event("keydown", keyCode: 64)
+    editorView.trigger(typingEvent)
+    expect(vimState.handleInput).toHaveBeenCalledWith(64)
 
   describe "activateNormalMode", ->
     it "adds .normal-mode", ->
