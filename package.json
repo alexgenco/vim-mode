@@ -1,11 +1,11 @@
 {
   "name": "vim-mode",
   "main": "./lib/vim-mode",
-  "version": "0.7.2",
-  "description": "Add vim modal control, currently experimental",
+  "version": "0.0.1",
+  "description": "Vim keybindings for Atom",
   "license": "MIT",
   "private": true,
-  "repository": "https://github.com/atom/vim-mode",
+  "repository": "https://github.com/alexgenco/vim-mode",
   "engines": {
     "atom": ">0.61.0"
   },
